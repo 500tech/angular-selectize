@@ -114,9 +114,9 @@ angular.module('selectize', []).value('selectizeConfig', {}).directive("selectiz
         scope.$watch('ngDisabled', toggle);
       }
 
-      element.selectize(config);
+      $(element[0]).selectize(config);
 
-      element.on('$destroy', function() {
+      $(element[0]).on('$destroy', function() {
         if (selectize) {
           selectize.destroy();
           element = null;
